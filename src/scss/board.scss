@@ -28,7 +28,7 @@
     }
     .light-tile{
         background-color: $light-tile;
-        border: 1px solid darken($light-tile, 10%)
+        border: 1px solid darken($light-tile, 10%);
     }
     .dark-tile{
         background-color: $dark-tile;
