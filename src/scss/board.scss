@@ -1,0 +1,40 @@
+.chessboard{
+    margin: 0 auto;
+
+    @media screen and (orientation:portrait) {
+        [class*="-tile"]{
+            box-sizing: border-box;
+            width: 10vw;
+            height: 10vw;
+            line-height: 10vw;
+        }
+        .rank-tile, .file-tile{
+            font-size: 5vw;
+        }
+    }
+    @media screen and (orientation:landscape) {
+        [class*="-tile"]{
+            box-sizing: border-box;
+            width: 10vh;
+            height: 10vh;
+            line-height: 10vh;
+        }
+        .rank-tile, .file-tile{
+            font-size: 5vh;
+        }
+    }
+    .row{
+        display: flex;
+    }
+    .light-tile{
+        background-color: $light-tile;
+        border: 1px solid darken($light-tile, 10%)
+    }
+    .dark-tile{
+        background-color: $dark-tile;
+        border: 1px solid $dark-tile;
+    }
+    .rank-tile, .file-tile{
+        text-align: center;
+    }
+}
