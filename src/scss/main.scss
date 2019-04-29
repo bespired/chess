@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=#{$default-font}');
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overscroll-behavior: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul, menu, dir, h1, h2, h3, h4, p, hr {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+#app {
+    font-family: '#{$default-font}', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $default-color;
+
+    img{
+        width: 100%;
+    }
+}
