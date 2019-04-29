@@ -6,7 +6,6 @@ body{
     border: 0;
     overscroll-behavior: none;
 
-    // background-color: lighten($Chess-1-hex, 20%);
     background-color: $light-tile;
     color: darken($Chess-1-hex, 20%);
 
