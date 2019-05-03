@@ -9,6 +9,8 @@ body{
     background-color: $light-tile;
     color: darken($Chess-1-hex, 20%);
 
+    height: 100vh;
+    background: linear-gradient(180deg, darken($dark-tile, 10%) 0%, $dark-tile 100%);
 }
 
 a{
