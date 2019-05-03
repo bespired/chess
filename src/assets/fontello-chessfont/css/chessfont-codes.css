@@ -1,0 +1,19 @@
+
+.chess-black_bishop:before { content: '\e800'; } /* '' */
+.chess-black_horse:before { content: '\e801'; } /* '' */
+.chess-black_king:before { content: '\e802'; } /* '' */
+.chess-black_pawn:before { content: '\e803'; } /* '' */
+.chess-black_queen:before { content: '\e804'; } /* '' */
+.chess-black_rook:before { content: '\e805'; } /* '' */
+.chess-fill_bishop:before { content: '\e806'; } /* '' */
+.chess-fill_horse:before { content: '\e807'; } /* '' */
+.chess-fill_king:before { content: '\e808'; } /* '' */
+.chess-fill_pawn:before { content: '\e809'; } /* '' */
+.chess-fill_queen:before { content: '\e80a'; } /* '' */
+.chess-fill_rook:before { content: '\e80b'; } /* '' */
+.chess-white_bishop:before { content: '\e80c'; } /* '' */
+.chess-white_horse:before { content: '\e80d'; } /* '' */
+.chess-white_king:before { content: '\e80e'; } /* '' */
+.chess-white_pawn:before { content: '\e80f'; } /* '' */
+.chess-white_queen:before { content: '\e810'; } /* '' */
+.chess-white_rook:before { content: '\e811'; } /* '' */
