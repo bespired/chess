@@ -4,6 +4,7 @@
         margin: 4vw auto;
 
         [class*="-tile"]{
+            white-space: nowrap;
             box-sizing: border-box;
             width: 10vw;
             height: 10vw;
