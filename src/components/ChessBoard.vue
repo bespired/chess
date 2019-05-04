@@ -5,7 +5,7 @@
 			<div v-for="(rankletter, ranknumber) in ranks"
 					:key="`${rankletter}${file}`"
 					:class="tile(ranknumber, file)">
-				<!-- draw the piece -->
+				{{ pieceOn(rankletter, file) }}
 			</div>
 			<div class="none-tile"></div>
 		</div>
@@ -21,12 +21,15 @@
 </template>
 
 <script>
+import { setup } from '@/classes/Constants.js';
+
 export default {
 	name: 'ChessBoard',
 	data(){
 		return {
 			files: [ 8, 7, 6, 5, 4, 3, 2, 1],
 			ranks: ['A','B','C','D','E','F','G','H'],
+			squares: setup
 		}
 	},
 	methods: {
@@ -36,6 +39,10 @@ export default {
 				: "dark-tile"
 			;
 		},
+		pieceOn(rank, file) {
+			if ( this.squares[rank][file] === undefined ) return 'none';
+			return this.squares[rank][file];
+		}
 	}
 }
 </script>
