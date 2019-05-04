@@ -5,7 +5,7 @@
 			<div v-for="(rankletter, ranknumber) in ranks"
 					:key="`${rankletter}${file}`"
 					:class="tile(ranknumber, file)">
-				{{ pieceOn(rankletter, file) }}
+				<i :class="pieceOn(rankletter, file)" />
 			</div>
 			<div class="none-tile"></div>
 		</div>
