@@ -31,13 +31,12 @@
     }
     .light-tile{
         background-color: $light-tile;
-        border: 1px solid $light-tile;
         background: linear-gradient(120deg, lighten($light-tile, 20%) 0%, $light-tile 100%);
     }
     .dark-tile{
-        background-color: $dark-tile;
-        border: 1px solid darken($light-tile, 50%);
-        background: linear-gradient(120deg, lighten($dark-tile, 5%) 0%, $dark-tile 100%);
+        background-color: #926b24;
+        // background: linear-gradient(120deg, lighten($dark-tile, 40%) 0%, lighten($dark-tile, 20%)  100%);
+        background: linear-gradient(120deg, #bd9768 0%, #926b24 100%);
     }
     .rank-tile, .file-tile{
         text-align: center;
