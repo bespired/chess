@@ -1,10 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { boardModule } from '@/modules/boardModule.js';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {}
+	modules: {
+  		boardModule
+    },
+	state: {},
+	mutations: {},
+	actions: {}
 });

@@ -21,17 +21,23 @@
 </template>
 
 <script>
+import { files, ranks } from '@/classes/Constants.js';
 import { setup } from '@/classes/Constants.js';
+import { mapGetters } from 'vuex';
 
 export default {
 	name: 'ChessBoard',
 	data(){
 		return {
-			files: [ 8, 7, 6, 5, 4, 3, 2, 1],
-			ranks: ['A','B','C','D','E','F','G','H'],
-			squares: setup
+			files,
+			ranks,
 		}
 	},
+	computed: {
+    	...mapGetters({
+      		squares: 'boardModule/squares',
+    	}),
+    },
 	methods: {
 		tile(rank, file) {
 			return ((file % 2) + (rank % 2)) % 2 === 0
