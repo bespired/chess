@@ -11,18 +11,20 @@
 		</div>
 		<div class="row">
 			<div class="none-tile"></div>
-			<div v-for="rank in ranks"
-					:key="rank" class="rank-tile">
-				{{ rank }}
-			</div>
+			<div v-for="rank in ranks" :key="rank" class="rank-tile">{{ rank }}</div>
 			<div class="none-tile"></div>
+		</div>
+		<div class="FENhover">
+			<div class="FENinput">
+				<input type="text" v-model="fenInput" />
+				<a @click="$store.commit('boardModule/setBoard');">Setup</a>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { files, ranks } from '@/classes/Constants.js';
-import { setup } from '@/classes/Constants.js';
+import { files, ranks, setup } from '@/classes/Constants.js';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -37,6 +39,10 @@ export default {
     	...mapGetters({
       		squares: 'boardModule/squares',
     	}),
+    	fenInput: {
+            get () { return this.$store.getters['boardModule/fenInput']; },
+            set (value) {   this.$store.commit('boardModule/fenInput', value); }
+        }
     },
 	methods: {
 		tile(rank, file) {
@@ -46,7 +52,7 @@ export default {
 			;
 		},
 		pieceOn(rank, file) {
-			if ( this.squares[rank][file] === undefined ) return 'none';
+			if ( this.squares[rank][file] === '' ) return 'none';
 			return this.squares[rank][file];
 		}
 	}
