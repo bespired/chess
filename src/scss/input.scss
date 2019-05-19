@@ -5,11 +5,39 @@
         bottom: 0; left: 5vw; right: 5vw;
         height: 15vh;
         overflow: hidden;
+        &:hover .FENsetup{
+            bottom: 1vh;
+        }
         &:hover .FENinput{
             bottom: 6vh;
         }
+        a{
+            flex: 1;
+            padding: 1vh;
+            text-align: center;
+            cursor: pointer;
+             &:hover{
+                background-color: #dcc8af;
+                color: $dark-tile;
+            }
+            &:active{
+                background-color:$dark-tile;
+                color: $light-tile;
+            }
+        }
     }
 
+    .FENsetup {
+        display: flex;
+        transition: bottom 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+        position: absolute;
+        bottom: -7vh; left: 0;right: 0;
+        font-size: 1.5vw;
+        a{
+            transition: color 100ms;
+            text-transform: capitalize;
+        }
+    }
     .FENinput {
         display: flex;
         transition: bottom 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -17,6 +45,7 @@
         bottom: -7vh; left: 0;right: 0;
         font-size: 4.5vw;
         background-color: white;
+        flex-direction: column;
 
         input[type=text]{
             flex: 11;
@@ -30,22 +59,6 @@
                 outline-color: #dcc8af;
                 outline-style: solid;
             };
-        }
-        a{
-            flex: 1;
-            padding: 1vh;
-            font-size: .5em;
-            text-align: center;
-            cursor: pointer;
-            transition: color 100ms;
-            &:hover{
-                background-color: #dcc8af;
-                color: $dark-tile;
-            }
-            &:active{
-                background-color:$dark-tile;
-                color: $light-tile;
-            }
         }
     }
 

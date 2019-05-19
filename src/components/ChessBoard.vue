@@ -1,30 +1,31 @@
 <template>
 	<div class="chessboard" >
 		<div class="row" v-for="file in files" :key="file" >
-			<div class="file-tile">{{ file }}</div>
 			<div v-for="(rankletter, ranknumber) in ranks"
 					:key="`${rankletter}${file}`"
 					:class="tile(ranknumber, file)">
+				<div class="file-number" v-if="ranknumber==0">{{ file }}</div>
+				<div class="rank-letter" v-if="file==1">{{ rankletter }}</div>
 				<i :class="pieceOn(rankletter, file)" />
 			</div>
-			<div class="none-tile"></div>
+			<!-- <div class="none-tile"></div> -->
 		</div>
-		<div class="row">
-			<div class="none-tile"></div>
-			<div v-for="rank in ranks" :key="rank" class="rank-tile">{{ rank }}</div>
-			<div class="none-tile"></div>
-		</div>
-		<div class="FENhover">
+ 			<div class="FENhover">
 			<div class="FENinput">
 				<input type="text" v-model="fenInput" />
-				<a @click="$store.commit('boardModule/setBoard');">Setup</a>
+			</div>
+			<div class="FENsetup">
+				<template v-for="key in Object.keys(positions)">
+					<a @click="fenInput=positions[key]">{{ key }}</a>
+				</template>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { files, ranks, setup } from '@/classes/Constants.js';
+
+import { files, ranks, piece, positions } from '@/classes/Constants.js';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -33,8 +34,10 @@ export default {
 		return {
 			files,
 			ranks,
+			positions,
 		}
 	},
+
 	computed: {
     	...mapGetters({
       		squares: 'boardModule/squares',
@@ -52,8 +55,9 @@ export default {
 			;
 		},
 		pieceOn(rank, file) {
-			if ( this.squares[rank][file] === '' ) return 'none';
-			return this.squares[rank][file];
+			let squares = this.squares.get(`${rank}${file}`);
+			if ( !squares ) return 'none';
+			return piece[squares.color][squares.type];
 		}
 	}
 }

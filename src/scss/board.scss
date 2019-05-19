@@ -1,5 +1,32 @@
 .chessboard{
 
+    border: 2px solid black;
+
+
+    .file-number, .rank-letter{
+        position: absolute;
+        line-height: 100%;
+    }
+
+    .dark-tile .file-number, .dark-tile  .rank-letter{
+        color: $light-tile;
+    }
+
+
+    .file-number{
+        left: 2%;
+        top: 2%;
+    }
+    .rank-letter{
+        right: 2%;
+        bottom: 2%;
+    }
+
+    [class*="-tile"]{
+        position: relative;
+    }
+
+
     @media screen and (orientation:portrait) {
         margin: 4vw auto;
 
@@ -10,8 +37,8 @@
             height: 10vw;
             line-height: 10vw;
         }
-        .rank-tile, .file-tile{
-            font-size: 2vw;
+        .file-number, .rank-letter{
+            font-size: 2.2vw;
         }
     }
     @media screen and (orientation:landscape) {
@@ -23,8 +50,8 @@
             height: 10vh;
             line-height: 10vh;
         }
-        .rank-tile, .file-tile{
-            font-size: 2vh;
+        .file-number, .rank-letter{
+            font-size: 2.2vh;
         }
     }
     .row{
@@ -39,7 +66,5 @@
         // background: linear-gradient(120deg, lighten($dark-tile, 40%) 0%, lighten($dark-tile, 20%)  100%);
         background: linear-gradient(120deg, #bd9768 0%, #926b24 100%);
     }
-    .rank-tile, .file-tile{
-        text-align: center;
-    }
+
 }
